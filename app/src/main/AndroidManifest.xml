@@ -8,17 +8,32 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan">
-
-        <intent-filter>
+        <activity android:name=".MainActivity">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".DensityActivity"
+            android:label="@string/app_name_density"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.convergeconsult.MainActivity" />
+        </activity>
+        <activity
+            android:name=".DipActivity"
+            android:label="@string/app_name_dip"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.convergeconsult.MainActivity" />
         </activity>
         <activity
             android:name=".DisplayDataActivity"
@@ -39,5 +54,5 @@
                 android:value="com.example.convergeconsult.MainActivity" />
         </activity>
     </application>
-
+<permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>"
 </manifest>

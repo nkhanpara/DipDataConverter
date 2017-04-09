@@ -1,6 +1,21 @@
 <resources>
-    <string name="app_name">Converge Consult</string>
+    <string name="app_name">Fuel Volume Estimator</string>
+    <string name="app_name_dip">Dip Reading</string>
+    <string name="app_name_density">Density</string>
+    <string name="volDip">Volume (in ltr): </string>
+    <string name="convDensity">Converted Density: </string>
+    <string name="obvDensity">Observed Density:</string>
+    <string name="dipReading">Dip Reading:</string>
+    <string name="editText1Dip">in CMs</string>
+    <string name="temperature">Temperature:</string>
+    <string name="editText1Density">kg/m^3</string>
+    <string name="editText2Density">in Celsius</string>
+    <string name="aboutmsg">This is an application only for reference purpose. No legality
+        associated.</string>
+    <string name="detail">This app provides you the total volume of available fuel from
+        the dip reading for various size of fuel storage(10KL, 15KL, 20KL) installed at petrol
+        station. It also gives you the fuel volume (varying from 700-759 kg/m3 for
+        petrol, 800-859 kg/m3 for Diesel)at different temperature (varying from 0-50 degree
+        celcius).</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="vol">Volume (in ltr): </string>
-    <string name="reading">Dip Reading:</string>
 </resources>
