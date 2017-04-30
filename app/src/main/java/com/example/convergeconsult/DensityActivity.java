@@ -21,7 +21,12 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 public class DensityActivity extends AppCompatActivity {
+    private AdView mAdView;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -57,7 +62,10 @@ public class DensityActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabsDensity);
         tabLayout.setupWithViewPager(mViewPager);
 
-        DBDefaultValues.initializeValues(this);
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-5276594353990169~2024613538");
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
 
@@ -71,19 +79,12 @@ public class DensityActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.data:
-                showData();
-                return true;
             case R.id.about:
                 showAbout();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-    private void showData() {
-        Intent intent = new Intent(this, DisplayDataActivity.class);
-        startActivity(intent);
     }
 
     private void showAbout() {

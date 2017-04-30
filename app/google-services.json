@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "991550021979",
+    "firebase_url": "https://convergeconsult-f2e51.firebaseio.com",
+    "project_id": "convergeconsult-f2e51",
+    "storage_bucket": "convergeconsult-f2e51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991550021979:android:70ab68b56ccbaf03",
+        "android_client_info": {
+          "package_name": "com.example.convergeconsult"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991550021979-hdrach7mgs3ipeidrpsdcev7fam2k0l4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.convergeconsult",
+            "certificate_hash": "e6d6d2595f66245172c263274476158b076dbc87"
+          }
+        },
+        {
+          "client_id": "991550021979-vo9al10fl9vkcrq0ot71imeutd6hgcfs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlUH_WwWQYGSI316xjyvB5XrweCVkDWEg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991550021979-vo9al10fl9vkcrq0ot71imeutd6hgcfs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

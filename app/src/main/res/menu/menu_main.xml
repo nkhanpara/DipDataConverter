@@ -1,12 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.convergeconsult.DipActivity">
-    <item
-        android:id="@+id/data"
-        android:orderInCategory="100"
-        android:title="Dip Data"
-        app:showAsAction="never" />
+    tools:context="com.example.convergeconsult.MainActivity">
     <item
         android:id="@+id/about"
         android:orderInCategory="100"

@@ -23,4 +23,8 @@
         <item>20 KL</item>
     </string-array>
 
+    <style name="Theme.MyFancyTheme" parent="android:Theme.Holo">
+        <item name="android:homeAsUpIndicator">@drawable/logo</item>
+    </style>
+
 </resources>

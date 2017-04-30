@@ -21,9 +21,13 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.Map;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 public class DipActivity extends AppCompatActivity {
+    private AdView mAdView;
+    private static String naStr = "-NA-";
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -59,6 +63,11 @@ public class DipActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDip);
         tabLayout.setupWithViewPager(mViewPager);
 
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-5276594353990169~2024613538");
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
     }
 
 
@@ -72,20 +81,12 @@ public class DipActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.data:
-                showData();
-                return true;
             case R.id.about:
                 showAbout();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    private void showData() {
-        Intent intent = new Intent(this, DisplayDataActivity.class);
-        startActivity(intent);
     }
 
     private void showAbout() {
@@ -151,23 +152,10 @@ public class DipActivity extends AppCompatActivity {
                         textViewanswer.setText(getDipData(s));
                 }
                 public String getDipData(Editable s){
-                    String data = "NA";
-                    Map<String, String> mapData = getMapName();
-                    if(mapData != null && mapData.containsKey(s.toString())){
-                        data = mapData.get(s.toString());
-                    }
-                    return data;
-                }
-                public Map<String, String> getMapName(){
-                    switch (getArguments().getInt(ARG_SECTION_NUMBER)){
-                        case 1:
-                            return DBDefaultValues.dipData_10KLmap;
-                        case 2:
-                            return DBDefaultValues.dipData_15KLmap;
-                        case 3:
-                            return DBDefaultValues.dipData_20KLmap;
-                    }
-                    return null;
+                    return (s.length() > 0)?
+                        DBDefaultValues.getDipData(Double.parseDouble(s.toString()),
+                                getArguments().getInt(ARG_SECTION_NUMBER))
+                            : naStr;
                 }
             });
             return rootView;
